@@ -127,8 +127,6 @@ namespace FFSAPI.Repository
 
         //create objekt till Movie_Studio
 
-        //lägga till film för uthyrning
-
         //Is Movie available? kontrollerar tillräckligt med filmer att hyra ut
 
         //public async Task<ActionResult<Movie_Studio>> CreateNewRental(Movie_Studio movietoberented)
@@ -155,17 +153,5 @@ namespace FFSAPI.Repository
 
         //}
 
-
-
-
-        //logiken för att 
-
-
-        //var ska jag spara till databasen, från mitt repository?
-        //sätt i så fall denna metod där
-        //public void Save()
-        //{
-
-        //}
     }
 }
