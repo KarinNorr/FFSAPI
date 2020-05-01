@@ -55,24 +55,6 @@ namespace FFSAPI.Controllers
              _wrapper.UpdateAmount(id, newAmount);
         }
 
-
-
-        //PUT: api/movies/5/newamount/10
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        //[HttpPut("{id}/newamount/{newAmount}")]
-        //public async Task<IActionResult> PutNewAmount(int id, int newAmount)
-        //{
-        //    var movieToChange = await _context.Movies.FindAsync(id);
-        //    if (movieToChange == null) { return NotFound(); }
-
-        //    movieToChange.Amount = newAmount;
-        //    await _context.SaveChangesAsync();
-
-        //    return NoContent();
-        //}
-
-
         private bool MovieExists(int id)
         {
             return _context.Movies.Any(e => e.Id == id);
