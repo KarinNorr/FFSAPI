@@ -16,7 +16,6 @@ namespace FFSAPI.Controllers
     public class MovieController : ControllerBase
     {
         private readonly RepositoryWrapper _wrapper;
-        private readonly MyDbContext _context;
 
         public MovieController(RepositoryWrapper wrapper)
         {
@@ -55,9 +54,9 @@ namespace FFSAPI.Controllers
              _wrapper.UpdateAmount(id, newAmount);
         }
 
-        private bool MovieExists(int id)
-        {
-            return _context.Movies.Any(e => e.Id == id);
-        }
+        //private bool MovieExists(int id)
+        //{
+        //    return _context.Movies.Any(e => e.Id == id);
+        //}
     }
 }
