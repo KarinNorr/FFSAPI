@@ -12,13 +12,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using FFSAPI.Models;
-
+using FFSAPI.Contracts;
+using FFSAPI.Repository;
 
 namespace FFSAPI
 {
     public class Startup
     {
-                public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -31,7 +32,9 @@ namespace FFSAPI
             services.AddControllers();
             services.AddDbContext<MyDbContext>(opt => opt.UseSqlite("Data Source = minDatabas.db"));
             services.AddControllers().AddXmlSerializerFormatters();
-    }
+            services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+            services.AddScoped<RepositoryWrapper>();
+    } 
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

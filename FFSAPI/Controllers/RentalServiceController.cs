@@ -14,6 +14,9 @@ namespace FFSAPI.Controllers
     [ApiController]
     public class RentalServiceController : ControllerBase
     {
+        //uppdatera detta API med ett repository och en wrapper
+        // sätter referens till wrapper
+
         private readonly MyDbContext _context;
 
         public RentalServiceController(MyDbContext context)

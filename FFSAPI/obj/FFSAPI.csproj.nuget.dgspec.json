@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/FFS/FFSAPI/FFSAPI.csproj": {}
+    "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/SFF/FFSAPI/FFSAPI.csproj": {}
   },
   "projects": {
-    "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/FFS/FFSAPI/FFSAPI.csproj": {
+    "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/SFF/FFSAPI/FFSAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/FFS/FFSAPI/FFSAPI.csproj",
+        "projectUniqueName": "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/SFF/FFSAPI/FFSAPI.csproj",
         "projectName": "FFSAPI",
-        "projectPath": "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/FFS/FFSAPI/FFSAPI.csproj",
+        "projectPath": "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/SFF/FFSAPI/FFSAPI.csproj",
         "packagesPath": "/Users/karinnorrlander/.nuget/packages/",
-        "outputPath": "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/FFS/FFSAPI/obj/",
+        "outputPath": "/Users/karinnorrlander/Documents/Documents/2019/SYSTEMUTVECKLING/KURS2_PROGRAMMERING_/TEST_KODNING/SFF/FFSAPI/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
