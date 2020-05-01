@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FFSAPI.Models;
+using FFSAPI.Repository;
 
 namespace FFSAPI.Controllers
 {
@@ -13,61 +14,42 @@ namespace FFSAPI.Controllers
     [ApiController]
     public class StudioController : ControllerBase
     {
+        private readonly RepositoryWrapper _wrapper; 
         private readonly MyDbContext _context;
 
-        public StudioController(MyDbContext context)
+        public StudioController(RepositoryWrapper wrapper)
         {
-            _context = context;
-
+            _wrapper = wrapper;
         }
 
-        //hämtar en studio med specifikt id
+        //GET: api/studios/id
         [HttpGet("{id}")]
         public async Task<ActionResult<Studio>> GetStudio(int id)
         {
-            var studio = await _context.Studios.FindAsync(id);
-            if (studio == null)
-            {
-                return NotFound();
-            }
+            var studio = await _wrapper.GetStudioById(id);
+            if (studio == null) { return NotFound(); }
             return studio;
         }
 
-        //lägger till en ny studio
+        //POST: api/Studios
         [HttpPost]
-        public async Task<ActionResult<Studio>> PostStudio(Studio studio)
+        public async Task PostStudio(Studio studio)
         {
-            _context.Studios.Add(studio);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetStudio), new { id = studio.Id }, studio);
+            await _wrapper.CreateStudio(studio);
         }
 
-        //byter namn och ort på en studio, tar in id, nytt namn och ny ort
-        [HttpPut("{id}/newname/{name}/newlocation/{location}")]
-        public async Task<IActionResult> PutStudio(int id, string name, string location)
-        {
-            var studioToChange = await _context.Studios.FindAsync(id);
-            if (studioToChange == null) { return NotFound(); }
-
-            studioToChange.Location = location;
-            studioToChange.Name = name;
-            _context.Studios.Update(studioToChange);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-         }
-
-        //tar bort en studio
+        //DELETE: api/studios/id
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Studio>> DeleteStudio(int id)
+        public async Task DeleteStudio(int id)
         {
-            var studioToDelete = await _context.Studios.FindAsync(id);
-            if (studioToDelete == null) { return NotFound(); }
+            await _wrapper.DeleteStudio(id);
+        }
 
-            _context.Studios.Remove(studioToDelete);
-            await _context.SaveChangesAsync();
-            return studioToDelete;
+        //PUT: api/studios/id
+        [HttpPut("{id}/newname/{name}/newlocation/{location}")]
+        public async Task PutStudio(int id, string newname, string newlocation)
+        {
+            await _wrapper.UpdateStudio(id, newname, newlocation);
         }
     }
 }

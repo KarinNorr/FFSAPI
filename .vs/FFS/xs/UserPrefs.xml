@@ -1,13 +1,11 @@
 ﻿<Properties StartupConfiguration="{7004E4E7-9DA1-475E-8CDC-83786A6ABBA8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FFSAPI/Repository/RepositoryWrapper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FFSAPI/Controllers/StudioController.cs">
     <Files>
-      <File FileName="FFSAPI/Controllers/MovieController.cs" Line="43" Column="9" />
-      <File FileName="FFSAPI/Models/MyDbContext.cs" Line="3" Column="24" />
-      <File FileName="FFSAPI/Controllers/RentalServiceController.cs" Line="45" Column="95" />
-      <File FileName="FFSAPI/Repository/RepositoryWrapper.cs" Line="48" Column="1" />
-      <File FileName="FFSAPI/Startup.cs" Line="24" Column="43" />
+      <File FileName="FFSAPI/Controllers/MovieController.cs" Line="17" Column="6" />
+      <File FileName="FFSAPI/Repository/RepositoryWrapper.cs" Line="91" Column="30" />
       <File FileName="FFSAPI/Repository/RepositoryBase.cs" Line="22" Column="1" />
       <File FileName="FFSAPI/Contracts/IRepositoryBase.cs" Line="1" Column="1" />
+      <File FileName="FFSAPI/Controllers/StudioController.cs" Line="16" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +13,11 @@
           <Node name="FFS" expanded="True">
             <Node name="FFSAPI" expanded="True">
               <Node name="Contracts" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Repository" expanded="True">
-                <Node name="RepositoryWrapper.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="StudioController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Repository" expanded="True" />
             </Node>
           </Node>
         </State>

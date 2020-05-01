@@ -52,20 +52,14 @@ namespace FFSAPI.Repository
             }
            //else return throw new notimplementedexception
         }
-
-        //bool to check if the data is ok
-        public bool MovieContainsTitle(Movie movie)
-        {
-            if (movie.Title != null) { return true; }
-            else return false;
-        }
         
         //update amount for Movie
-        public async void UpdateAmount (int id, int newAmount)
+        public async Task UpdateAmount (int id, int newAmount)
         {
             var movie = await movieRepository.GetById(id);
             //if (movie == null) /*{ throw new NotImplementedException(); }*/
             movie.Amount = newAmount;
+            //movieRepository.Update(movie);
             await movieRepository.Save();
         }
 
@@ -87,6 +81,13 @@ namespace FFSAPI.Repository
             else return false;
         }
 
+        //bool to check if the data is ok
+        public bool MovieContainsTitle(Movie movie)
+        {
+            if (movie.Title != null) { return true; }
+            else return false;
+        }
+
 
         //-------------------
         //METODER FÖR STUDIO:
@@ -105,6 +106,22 @@ namespace FFSAPI.Repository
         public async Task CreateStudio(Studio studio)
         {
             await studioRepository.Create(studio);
+            await studioRepository.Save();
+        }
+
+        //update with exception handler
+        public async Task DeleteStudio(int id)
+        {
+            await studioRepository.Delete(id);
+            await studioRepository.Save();
+        }
+
+        public async Task UpdateStudio(int id, string name, string location)
+        {
+            var studio = await studioRepository.GetById(id);
+            studio.Name = name;
+            studio.Location = location;
+            studioRepository.Update(studio);
             await studioRepository.Save();
         }
 

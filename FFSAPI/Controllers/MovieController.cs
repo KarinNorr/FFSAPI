@@ -26,6 +26,7 @@ namespace FFSAPI.Controllers
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
             var movie = await _wrapper.GetMovieById(id);
+            if ( movie == null) { return NotFound(); }
             return movie;
         }
 
@@ -49,9 +50,9 @@ namespace FFSAPI.Controllers
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         //Todo: Fix exception handling 
         [HttpPut("{id}/newamount/{newAmount}")]
-        public void PutNewAmount(int id, int newAmount)
+        public async Task PutNewAmount(int id, int newAmount)
         {
-             _wrapper.UpdateAmount(id, newAmount);
+             await _wrapper.UpdateAmount(id, newAmount);
         }
 
         //private bool MovieExists(int id)
