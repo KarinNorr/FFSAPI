@@ -106,7 +106,6 @@ namespace FFSAPI.Repository
         {
             await studioRepository.Create(studio);
             await studioRepository.Save();
-
         }
 
         //create objekt till Movie_Studio
